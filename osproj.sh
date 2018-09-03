@@ -8,7 +8,11 @@ WHITE='\033[1;37m'
 
 # Dependencies => figlet, htop, neofetch, speedtest-cli, net-tools
 bash resdep.sh figlet
-bash resdep.sh neofetch
+bash resdep.sh nmap
+bash resdep.sh macchanger
+bash resdep.sh aircrack-ng
+bash resdep.sh netdiscover
+#bash resdep.sh mailutils
 bash resdep.sh net-tools
 
 # Clear screen
@@ -31,7 +35,6 @@ while :
 printf "${GREEN}--------------------------------------------\n"
 printf "${WHITE}Select what you want to Do:\n"
 printf "${GREEN} \n"
-echo "0 - Tell me about this machine"
 echo "1 - Show all Mac-addresses and Wifi Access points around me"
 echo "2 - Change My mac-address"
 echo "3 - Get info of all devices on my Network"
@@ -42,11 +45,6 @@ printf ">${YELLOW} "
 do
   read INPUT_STRING
   case $INPUT_STRING in
-
-	0)	echo 
-		neofetch
-		echo 
-		;;
 
 	1)	echo 
 		gnome-terminal -e "bash -c 'bash getallMacIds.sh && bash turnoffMonitormode.sh'"
@@ -124,7 +122,6 @@ do
 				;;
 			
 			b)	ip=`hostname -I | awk '{$1=$1;print}'`
-				echo $ip
 				# Trim trailing white space
 				#ip="$(echo -e "${ip}" | sed -e 's/[[:space:]]*$//')"
 				command="sudo nmap -sS "
