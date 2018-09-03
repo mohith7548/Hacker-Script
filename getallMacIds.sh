@@ -6,5 +6,5 @@ echo $val
 sudo ifconfig $val down
 sudo iwconfig $val mode monitor
 sudo ifconfig $val up
-sudo airmon-ng check kill wlo1
+sudo airmon-ng check kill
 sudo airodump-ng $val

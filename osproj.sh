@@ -8,11 +8,8 @@ WHITE='\033[1;37m'
 
 # Dependencies => figlet, htop, neofetch, speedtest-cli, net-tools
 bash resdep.sh figlet
-bash resdep.sh htop
 bash resdep.sh neofetch
-bash resdep.sh speedtest-cli
 bash resdep.sh net-tools
-bash resdep.sh redshift
 
 # Clear screen
 clear
@@ -20,12 +17,13 @@ clear
 # Banner
 figlet "Hacker Script" -c
 
+# echo $0
 # Wish the user
 printf "${WHITE}Hello ${YELLOW}"$LOGNAME
 printf "!\n"
 
 # Show Last read file
-printf "${WHITE}Last opened: `stat -c '%x' ~/bash-scripts/os-project/osproj.sh`\n"
+printf "${WHITE}Last opened: `stat -c '%x' ./osproj.sh`\n"
 echo 
 
 # Main while loop starts
@@ -34,10 +32,10 @@ printf "${GREEN}--------------------------------------------\n"
 printf "${WHITE}Select what you want to Do:\n"
 printf "${GREEN} \n"
 echo "0 - Tell me about this machine"
-echo "1 - Bring up eye filter"
-echo "2 - Show all Mac-addresses and Wifi Access points around me"
-echo "3 - Change My mac-address"
-echo "4 - Get info of all devices on my Network"
+echo "1 - Show all Mac-addresses and Wifi Access points around me"
+echo "2 - Change My mac-address"
+echo "3 - Get info of all devices on my Network"
+echo "4 - Get the all open ports and OS details"
 echo "e - To exit"
 printf "${GREEN}--------------------------------------------\n"
 printf ">${YELLOW} " 
@@ -51,21 +49,13 @@ do
 		;;
 
 	1)	echo 
-		#free -h | grep Mem | awk '{printf "RAM status: %sB/%sB\n", $3, $2}'
-		printf "Enter a val between 1000 - 25000: "
-		read val
-		redshift -O $val
-		echo 
-		;;
-
-	2)	echo 
 		gnome-terminal -e "bash -c 'bash getallMacIds.sh && bash turnoffMonitormode.sh'"
 		#printf "Total number of processes running currently: "
 		#ps -aux | wc -l
 		echo 
 		;;
 
-	3)	echo 
+	2)	echo 
 		echo "a - Get a Random mac-address"
 		echo "b - Assign a specific mac-address"
 		echo "c - Reset mac-address"
@@ -90,14 +80,89 @@ do
 				sudo ifconfig $iname up
 				sudo service NetworkManager restart
 				;;
+
 			*) 	echo "Wrong Option! Try agian!!"
+				;;
 		esac
 		;;
 
-	4)	echo 
+	3)	echo 
 		iname=`iw dev | awk '$1=="Interface"{print $2}'`
 		gnome-terminal -e "sudo netdiscover -i $iname"
 		echo 
+		;;
+
+	4)	echo 
+		echo "a) of Specific ip"
+		echo "b) of devices on my Network"
+		printf "Choose an option: "
+		read opt
+		echo 
+		case $opt in
+			a) 	printf "Enter an ip address: "
+				read ip
+				command="sudo nmap -sS $ip"
+				printf "Enable fast scan?(y/n): "
+				read fast_bool
+				if [ "$fast_bool" = "y" ]
+				then
+					command="$command -F"
+				fi
+				printf "Enable OS Detection?(y/n): "
+				read os_bool
+				if [ "$os_bool" = "y" ]
+				then
+					command="$command -O"
+				fi
+				printf "Enable Verbose output?(y/n): "
+				read v_bool
+				if [ "$v_bool" = "y" ]
+				then
+					command="$command -v"
+				fi
+				$command
+				;;
+			
+			b)	ip=`hostname -I | awk '{$1=$1;print}'`
+				echo $ip
+				# Trim trailing white space
+				#ip="$(echo -e "${ip}" | sed -e 's/[[:space:]]*$//')"
+				command="sudo nmap -sS "
+				echo "Choose type of network: "
+				echo "1) /8"
+				echo "2) /24"
+				read type
+				printf "Enable Fast scan?(y/n): "
+				read fast_bool
+				if [ "$fast_bool" = "y" ]
+				then
+					command="$command -F"
+				fi
+				printf "Enable OS Detection?(y/n): "
+				read os_bool
+				if [ "$os_bool" = "y" ]
+				then
+					command="$command -O"
+				fi
+				printf "Enable Verbose output?(y/n): "
+				read v_bool
+				if [ "$v_bool" = "y" ]
+				then
+					command="$command -v"
+				fi
+				case $type in
+					1) 	command="$command $ip/8"
+						$command
+						;;
+					2)	command="$command $ip/24"
+						$command
+						;;
+				esac
+				;;
+
+			*)  echo "Wrong Option! Try agian!!"
+				;;
+		esac
 		;;
 
 	e)	echo "See you again!"
