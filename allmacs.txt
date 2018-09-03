@@ -1,0 +1,72 @@
+ _____________________________________________________________________________
+   IP            At MAC Address     Count     Len  MAC Vendor / Hostname      
+ -----------------------------------------------------------------------------
+ 192.168.0.1     10:62:eb:28:e6:b1      1      56  D-Link International
+
+-- Active scan completed, 1 Hosts found.
+[3J[H[2J Currently scanning: Starting.   |   Screen View: Unique Hosts                            
+                                                                                          
+ 0 Captured ARP Req/Rep packets, from 0 hosts.   Total size: 0                            
+ _____________________________________________________________________________
+   IP            At MAC Address     Count     Len  MAC Vendor / Hostname      
+ -----------------------------------------------------------------------------
+ Currently scanning: Starting.   |   Screen View: Unique Hosts                            
+                                                                                          
+ 0 Captured ARP Req/Rep packets, from 0 hosts.   Total size: 0                            
+ _____________________________________________________________________________
+   IP            At MAC Address     Count     Len  MAC Vendor / Hostname      
+ -----------------------------------------------------------------------------
+ Currently scanning: 192.168.0.0/16   |   Screen View: Unique Hosts                       
+                                                                                          
+ 0 Captured ARP Req/Rep packets, from 0 hosts.   Total size: 0                            
+ _____________________________________________________________________________
+   IP            At MAC Address     Count     Len  MAC Vendor / Hostname      
+ -----------------------------------------------------------------------------
+ Currently scanning: 192.168.3.0/16   |   Screen View: Unique Hosts                       
+                                                                                          
+ 2 Captured ARP Req/Rep packets, from 2 hosts.   Total size: 98                           
+ _____________________________________________________________________________
+   IP            At MAC Address     Count     Len  MAC Vendor / Hostname      
+ -----------------------------------------------------------------------------
+ 192.168.0.1     10:62:eb:28:e6:b1      1      56  D-Link International                   
+ 192.168.0.4     dc:1a:c5:29:4b:23      1      42  vivo Mobile Communication Co., Ltd.    
+ Currently scanning: 192.168.6.0/16   |   Screen View: Unique Hosts                       
+                                                                                          
+ 2 Captured ARP Req/Rep packets, from 2 hosts.   Total size: 98                           
+ _____________________________________________________________________________
+   IP            At MAC Address     Count     Len  MAC Vendor / Hostname      
+ -----------------------------------------------------------------------------
+ 192.168.0.1     10:62:eb:28:e6:b1      1      56  D-Link International                   
+ 192.168.0.4     dc:1a:c5:29:4b:23      1      42  vivo Mobile Communication Co., Ltd.    
+ Currently scanning: 192.168.10.0/16   |   Screen View: Unique Hosts                      
+                                                                                          
+ 2 Captured ARP Req/Rep packets, from 2 hosts.   Total size: 98                           
+ _____________________________________________________________________________
+   IP            At MAC Address     Count     Len  MAC Vendor / Hostname      
+ -----------------------------------------------------------------------------
+ 192.168.0.1     10:62:eb:28:e6:b1      1      56  D-Link International                   
+ 192.168.0.4     dc:1a:c5:29:4b:23      1      42  vivo Mobile Communication Co., Ltd.    
+ Currently scanning: 192.168.13.0/16   |   Screen View: Unique Hosts                      
+                                                                                          
+ 2 Captured ARP Req/Rep packets, from 2 hosts.   Total size: 98                           
+ _____________________________________________________________________________
+   IP            At MAC Address     Count     Len  MAC Vendor / Hostname      
+ -----------------------------------------------------------------------------
+ 192.168.0.1     10:62:eb:28:e6:b1      1      56  D-Link International                   
+ 192.168.0.4     dc:1a:c5:29:4b:23      1      42  vivo Mobile Communication Co., Ltd.    
+ Currently scanning: 192.168.17.0/16   |   Screen View: Unique Hosts                      
+                                                                                          
+ 2 Captured ARP Req/Rep packets, from 2 hosts.   Total size: 98                           
+ _____________________________________________________________________________
+   IP            At MAC Address     Count     Len  MAC Vendor / Hostname      
+ -----------------------------------------------------------------------------
+ 192.168.0.1     10:62:eb:28:e6:b1      1      56  D-Link International                   
+ 192.168.0.4     dc:1a:c5:29:4b:23      1      42  vivo Mobile Communication Co., Ltd.    
+ Currently scanning: 192.168.20.0/16   |   Screen View: Unique Hosts                      
+                                                                                          
+ 2 Captured ARP Req/Rep packets, from 2 hosts.   Total size: 98                           
+ _____________________________________________________________________________
+   IP            At MAC Address     Count     Len  MAC Vendor / Hostname      
+ -----------------------------------------------------------------------------
+ 192.168.0.1     10:62:eb:28:e6:b1      1      56  D-Link International                   
+ 192.168.0.4     dc:1a:c5:29:4b:23      1      42  vivo Mobile Communication Co., Ltd.    
