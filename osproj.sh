@@ -127,7 +127,8 @@ do
 				command="sudo nmap -sS "
 				echo "Choose type of network: "
 				echo "1) /8"
-				echo "2) /24"
+				echo "2) /16"
+				echo "3) /24"
 				read type
 				printf "Enable Fast scan?(y/n): "
 				read fast_bool
@@ -151,7 +152,12 @@ do
 					1) 	command="$command $ip/8"
 						$command
 						;;
-					2)	command="$command $ip/24"
+
+					2)	command="$command $ip/16"
+						$command
+						;;
+
+					3)	command="$command $ip/24"
 						$command
 						;;
 				esac
