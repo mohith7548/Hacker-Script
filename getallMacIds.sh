@@ -7,4 +7,4 @@ sudo ifconfig $val down
 sudo iwconfig $val mode monitor
 sudo ifconfig $val up
 sudo airmon-ng check kill
-sudo airodump-ng $val
+sudo airodump-ng $val -w outputmacs.txt

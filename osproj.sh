@@ -12,6 +12,8 @@ bash resdep.sh nmap
 bash resdep.sh macchanger
 bash resdep.sh aircrack-ng
 bash resdep.sh netdiscover
+bash resdep.sh links
+bash resdep.sh youtube-dl
 #bash resdep.sh mailutils
 bash resdep.sh net-tools
 
@@ -39,7 +41,8 @@ echo "1 - Show all Mac-addresses and Wifi Access points around me"
 echo "2 - Change My mac-address"
 echo "3 - Get info of all devices on my Network"
 echo "4 - Get the all open ports and OS details"
-echo "e - To exit"
+echo "e - To run the downloading script"
+echo "f - to quit"
 printf "${GREEN}--------------------------------------------\n"
 printf ">${YELLOW} " 
 do
@@ -47,7 +50,9 @@ do
   case $INPUT_STRING in
 
 	1)	echo 
-		gnome-terminal -e "bash -c 'bash getallMacIds.sh && bash turnoffMonitormode.sh'"
+		echo "The output will be available in outputmacs.txt file"
+		echo 
+		gnome-terminal -e "bash -c 'bash getallMacIds.sh && bash turnoffMonitormode.sh && column -s, -t < outputmacs.txt-01.csv'"
 		#printf "Total number of processes running currently: "
 		#ps -aux | wc -l
 		echo 
@@ -168,7 +173,11 @@ do
 		esac
 		;;
 
-	e)	echo "See you again!"
+	e)	echo 
+		gnome-terminal -- bash project.sh
+		;;
+
+	f)  echo "See you again!"
 		echo 
 		break
 		;;
