@@ -4,3 +4,5 @@ Run the osproj.sh file to get into the script. This is the entry point.
 
 ## NOTE:
 This script contains things that can put you in trouble. This is only for educational purpose. Do not misuse it. I'm not responsible for your actions. Please read the pdf file before using this script.
+
+Please give a star if you like the repo and support the Developer.
